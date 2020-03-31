@@ -47,7 +47,7 @@ class DecisionTree(object):
         best_feature_idx = info_gains.index(max_info_gain)
         best_feature = dataset.columns[best_feature_idx]
 
-        # # 找出信息增益比最大的feature（跟ID3算法的唯一区别）
+        # # 找出信息增益比最大的feature（C4.5算法跟ID3算法的唯一区别）
         # info_gain_ratios = []
         # for i in range(dataset.shape[1] - 1):
         #     info_gain_ratios.append(cal_info_gain_ratio(dataset, axis=i))
