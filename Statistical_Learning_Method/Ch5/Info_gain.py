@@ -90,4 +90,3 @@ if __name__ == '__main__':
     max_info_gain_ratio_i = info_gain_ratios.index(max(info_gain_ratios))
     print('根据信息增益，最优特征为\"{}\"'.format(dataset.columns[max_info_gain_i]))
     print('根据信息增益比，最优特征为\"{}\"'.format(dataset.columns[max_info_gain_ratio_i]))
-    

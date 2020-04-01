@@ -28,14 +28,16 @@ def read_dataset(sample_size):
     iris = datasets.load_iris()
     data = iris.data
     target = iris.target
+    # 把特征和标签连接起来
+    dataset = np.concatenate((data[:, :2], target.reshape(-1, 1)), axis=1)
     
-    return data[:sample_size, :2], target[:sample_size]
+    return np.concatenate((dataset[0:40], dataset[50:90], dataset[100:140]), axis=0), np.concatenate((dataset[40:50], dataset[90:100], dataset[140:150]), axis=0)
 
 
 if __name__ == '__main__':
     # 读取数据
-    X, y = read_dataset(150)
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=30)
+    train_data, test_data = read_dataset(150)
+    X_train, X_test, y_train, y_test = train_data[:, :-1], test_data[:, :-1], train_data[:, -1], test_data[:, -1]
     
     # 对测试集进行预测
     knn = KNN(X_train, y_train)
