@@ -76,7 +76,7 @@ def cal_info_gain_ratio(dataset, axis=0):
 
 
 if __name__ == '__main__':
-    dataset = create_dataset()
+    dataset = create_dataset(dataset_num=1)
     
     info_gains = []
     info_gain_ratios = []

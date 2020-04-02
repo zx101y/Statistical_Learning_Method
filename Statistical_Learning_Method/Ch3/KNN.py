@@ -24,7 +24,7 @@ class KNN(object):
         return max(label_count, key=label_count.get)  # 找出出现次数最多的标签，作为预测值
 
 
-def read_dataset(sample_size):
+def read_dataset():
     iris = datasets.load_iris()
     data = iris.data
     target = iris.target
@@ -36,7 +36,7 @@ def read_dataset(sample_size):
 
 if __name__ == '__main__':
     # 读取数据
-    train_data, test_data = read_dataset(150)
+    train_data, test_data = read_dataset()
     X_train, X_test, y_train, y_test = train_data[:, :-1], test_data[:, :-1], train_data[:, -1], test_data[:, -1]
     
     # 对测试集进行预测
